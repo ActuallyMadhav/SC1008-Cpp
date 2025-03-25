@@ -9,12 +9,15 @@ struct ListNode {
 // TO-DO: You need to implement this function
 int getListLen(const ListNode* head) {
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
+    
+    int count = 0;
 
-
-
+    while(head){
+        count++;
+        head = head->next;
+    }
+    
+    return count;
 }
 
 int main() {

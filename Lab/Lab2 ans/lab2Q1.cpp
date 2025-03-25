@@ -1,7 +1,7 @@
 ///////// Student Info/////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Madhav Raghu Anantharam
+//      Your NTU Email: madhav010@e.ntu.edu.sg
 //
 //
 //
@@ -53,13 +53,20 @@ void destroyList(MarkNode*& head)
 // Function to get the value of the n-th node
 int getNthNodeValue(const MarkNode* head, int n) {
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
+    if(head == nullptr || n <= 0){
+        return -1;
+    }
 
+    const MarkNode* cur = head;
 
-    
+    for(int i = 1; i < n; i++){
+        if(cur->next == nullptr){
+            return -1;
+        }
+        cur = cur->next;
+    }
 
+    return cur->mark;
 }
 
 int main() {
