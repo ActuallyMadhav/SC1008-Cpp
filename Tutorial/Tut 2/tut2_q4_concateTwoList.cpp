@@ -53,14 +53,23 @@ void insertNode2ListEnd(Node*& head, double newValue) {
 // Function to concatenate two lists
 void concateTwoLists(Node*& firstList, Node*& secondList) {
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
+    if(firstList == nullptr){
+        firstList = secondList;
+        secondList = nullptr;
+        return;
+    }
 
+    if(secondList == nullptr){
+        return;
+    }
 
+    Node* cur = firstList;
+    while(cur->next != nullptr){
+        cur = cur->next;
+    }
+    cur->next = secondList;
 
-
-
+    secondList = nullptr;
 }
 
 int main() {

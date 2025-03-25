@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -60,14 +59,25 @@ void insertNode2ListEnd(Node*& head, double newValue) {
 void insertNode2SortedList(Node*& head, double number)
 {
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-    
+    Node * newNode = new Node;
+    newNode->value = number;
+    newNode->next = nullptr;
 
+    if(head == nullptr || head->value >= number){
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
 
+    // traverse the list
+    Node* cur = head;
+    while(cur->next != nullptr && cur->next->value < number){
+        cur = cur->next;
+    }
 
-
+    // insert new node
+    newNode->next = cur->next;
+    cur->next = newNode;
 }
 
 
