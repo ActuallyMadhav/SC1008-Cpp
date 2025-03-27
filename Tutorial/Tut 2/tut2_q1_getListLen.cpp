@@ -11,10 +11,17 @@ int getListLen(const ListNode* head) {
     // TO-DO: WRITE YOUR CODE HERE
     
     int count = 0;
+    // MY SOLUTION:
+    // while(head){
+    //     count++;
+    //     head = head->next;
+    // }
 
-    while(head){
+    // PROF SOLUTION:
+    const ListNode* cur = head;
+    while(cur != nullptr){
         count++;
-        head = head->next;
+        cur = cur->next;
     }
     
     return count;
