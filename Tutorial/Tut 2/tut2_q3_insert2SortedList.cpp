@@ -38,6 +38,7 @@ void destroyList(Node*& head)
     head = nullptr;
 }
 
+
 void insertNode2ListEnd(Node*& head, double newValue) {
     Node* newNode = new Node;
     newNode->value = newValue;
@@ -56,6 +57,37 @@ void insertNode2ListEnd(Node*& head, double newValue) {
 }
 
 
+// prof solution
+void Prof_insertNode2SortedList(Node*& head, double num){
+    Node *nodePtr, *prevNodePtr;
+
+    Node* newNode = new Node;
+    newNode->value = num;
+    newNode->next = nullptr;
+
+    if(head == nullptr || head->value >= num){  // insertion at list head
+        nodePtr = head;
+        head = newNode;
+        newNode->next = nodePtr;
+    }
+    else{
+        prevNodePtr = head;
+        nodePtr = head->next;
+
+        //find insertion point
+        while(nodePtr != nullptr && nodePtr->value < num){
+            prevNodePtr = nodePtr;
+            nodePtr = nodePtr->next;
+        }
+
+        // insert before nodePtr
+        prevNodePtr->next = newNode;
+        newNode->next = nodePtr;
+    }
+}
+
+
+// MY SOLUTION:
 void insertNode2SortedList(Node*& head, double number)
 {
     // TO-DO: WRITE YOUR CODE HERE
@@ -94,11 +126,15 @@ int main() {
     cout << "Original list: ";
     printList(head);
 
-    insertNode2SortedList(head, 10.5);
+    Prof_insertNode2SortedList(head, 10.5);
     cout << "New list: ";
     printList(head);
 
-    insertNode2SortedList(head, 1.5);
+    Prof_insertNode2SortedList(head, 7.9);
+    cout << "New list: ";
+    printList(head);
+
+    Prof_insertNode2SortedList(head, 1.5);
     cout << "New list: ";
     printList(head);
 

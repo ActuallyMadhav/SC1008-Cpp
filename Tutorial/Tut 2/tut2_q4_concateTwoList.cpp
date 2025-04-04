@@ -50,7 +50,7 @@ void insertNode2ListEnd(Node*& head, double newValue) {
     temp->next = newNode; // Link last node to new node
 }
 
-// Function to concatenate two lists
+// MY SOLUTION: Function to concatenate two lists
 void concateTwoLists(Node*& firstList, Node*& secondList) {
     // TO-DO: WRITE YOUR CODE HERE
     if(firstList == nullptr){
@@ -69,6 +69,23 @@ void concateTwoLists(Node*& firstList, Node*& secondList) {
     }
     cur->next = secondList;
 
+    secondList = nullptr;
+}
+
+void Prof_concatenateTwoLists(Node*& firstList, Node*& secondList){
+    if(firstList == nullptr){
+        firstList = secondList;
+    }
+    else{
+        // traverse to end of firstlist
+        Node* temp = firstList;
+        while(temp->next != nullptr){
+            temp = temp->next;
+        }
+        //append secondList to the end of firstList
+        temp->next = secondList;
+    }
+    // set secondList to nullptr to avoid dangling pointers
     secondList = nullptr;
 }
 

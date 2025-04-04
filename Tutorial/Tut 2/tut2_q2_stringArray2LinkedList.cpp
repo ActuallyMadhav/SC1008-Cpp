@@ -32,28 +32,49 @@ void deleteList(StringNode*& head) {
 // Function to create a linked list from an array of strings
 void arrayToLinkedList(const string* arr, int size, StringNode*& head) {
     // TO-DO: WRITE YOUR CODE HERE
-    head = nullptr;
 
-    if(size <= 0 || arr == nullptr){
+    // MY SOLUTION: 
+
+    // head = nullptr;
+
+    // if(size <= 0 || arr == nullptr){
+    //     return;
+    // }
+
+    // // create head
+    // head = new StringNode;
+    // head->name = arr[0];
+    // head->next = nullptr;
+
+    // // current node
+    // StringNode* cur = head;
+
+    // // iterate thru array
+    // for(int i = 1; i < size; i++){
+    //     cur->next = new StringNode;
+    //     cur = cur->next;
+    //     cur->name = arr[i];
+    //     cur->next = nullptr;
+    // }
+
+    // PROF SOLUTION:
+    head = nullptr;
+    if(size == 0 || arr == nullptr){
         return;
     }
 
     // create head
     head = new StringNode;
     head->name = arr[0];
-    head->next = nullptr;
+    head->next = nullptr; // first node is special as it points to a nullptr
 
-    // current node
-    StringNode* cur = head;
-
-    // iterate thru array
+    //insert rest of elements
     for(int i = 1; i < size; i++){
-        cur->next = new StringNode;
-        cur = cur->next;
-        cur->name = arr[i];
-        cur->next = nullptr;
+        StringNode* newNode = new StringNode;
+        newNode->name = arr[i];
+        newNode->next = head; // new node points to current head
+        head = newNode; // head now points to new node
     }
-
 }
 
 int main() {
