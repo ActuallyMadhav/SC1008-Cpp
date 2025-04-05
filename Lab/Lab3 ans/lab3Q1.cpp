@@ -1,7 +1,7 @@
 ///////// Student Info/////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Madhav Raghu Anantharam
+//      Your NTU Email: madhav010@e.ntu.edu.sg
 //
 //
 //
@@ -19,27 +19,35 @@ public:
     // Constructor
     Product(string productName, double productPrice) {
         //TO-DO: Write Your Code Here
-        //
-        //
+        name = productName;
+        price = productPrice;
+        cout << "Product created: " << name << " ($" << price << ")" << '\n';
 
     }
 
     // Destructor
     //TO-DO: Write Your Code Here
-    //
-    //
+    ~Product(){
+        cout << "Product deleted: " << name << '\n';
+    }
 
     // Getters
     //TO-DO: Write Your Code Here
-    //
-    //
+    string getName(){
+        return name;
+    }
+
+    double getPrice(){
+        return price;
+    }
 
 
     // Setter for price (ensures non-negative value)
     void setPrice(double newPrice) {
         //TO-DO: Write Your Code Here
-        //
-        //
+        if (newPrice >= 0){
+            price = newPrice;
+        }
 
     }
 };
