@@ -1,7 +1,7 @@
 ///////// Student Info/////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Madhav Raghu Anantharam
+//      Your NTU Email: madhav010@e.ntu.edu.sg
 //
 //
 //
