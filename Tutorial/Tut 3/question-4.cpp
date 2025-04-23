@@ -18,21 +18,25 @@ public:
     void calculateVolume() {
         // Caclulate and display the volume of the box
         // TODO: Write your code here
-        //
-
-
+        double volume = length * width * height;
+        std::cout << "Box Volume: " << volume << " cubic units" << '\n';
     }
 
     // Declare a friend function to display private members
     // TODO: Write your code here
-    //
-
+    friend void displayDimensions(const Box& b);
 };
 
 
 // Define the friend function (that can access private members of Box)
 // TODO: Write your code here
-//
+void displayDimensions(const Box& b){
+    std::cout << "Box Dimensions: " << '\n';
+    std::cout << "Length: " << b.length << '\n';
+    std::cout << "Width: " << b.width << '\n';
+    std::cout << "Height: " << b.height << '\n';
+    std::cout << '\n';
+}
 
 int main() {
     // Creating a Box object

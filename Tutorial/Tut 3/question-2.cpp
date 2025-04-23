@@ -11,6 +11,12 @@ public:
         cout << "Constructor called with the count as " << *count << endl;
     }
 
+    // user defined copy constructor (deep copy)
+    VisitorCounter(const VisitorCounter& other){
+        count = new int(*other.count);
+        cout << "Deep Copy Constructor Called." << '\n';
+    }
+
     ~VisitorCounter() {
         cout << "Destructor called with the count being " << *count << endl;
         delete count;

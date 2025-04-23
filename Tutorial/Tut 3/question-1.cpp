@@ -3,25 +3,51 @@
 
 class Student {
 private: // TODO: define the private members here
+    std::string studentName;
+    int studentAge;
+    double studentGPA;
 
 public:
     // Constructor
     Student(std::string studentName, int studentAge, double studentGPA) {
         // TODO: Define the constructor
+        this->studentName = studentName;
+        this->studentAge = studentAge;
+        this->studentGPA = studentGPA;
     }
-
-    // Display function
     void displayDetails() const {
-        std::cout << "Student Name: " << name << std::endl;
-        std::cout << "Age: " << age << std::endl;
-        std::cout << "GPA: " << gpa << std::endl;
+        std::cout << "Student Name: " << studentName << '\n';
+        std::cout << "Age: " << studentAge << '\n';
+        std::cout << "GPA: " << studentGPA << '\n';
     }
 
     // Getters
     // TODO: Implement the getters here
+    std::string getName() const{
+        return studentName;
+    }
+
+    int getAge() const{
+        return studentAge;
+    }
+
+    double getGPA() const{
+        return studentGPA;
+    }
 
     // Setters
     // TODO: Implement the setters here
+    void setName(std::string newName){
+        studentName = newName;
+    }
+
+    void setAge(int newAge){
+        studentAge = newAge;
+    }
+
+    void setGPA(double newGPA){
+        studentGPA = newGPA;
+    }
 };
 
 int main() {
