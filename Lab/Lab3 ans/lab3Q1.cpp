@@ -46,7 +46,7 @@ public:
     void setPrice(double newPrice) {
         //TO-DO: Write Your Code Here
         if (newPrice >= 0){
-            price = newPrice;
+            this->price = newPrice;
         }
 
     }
